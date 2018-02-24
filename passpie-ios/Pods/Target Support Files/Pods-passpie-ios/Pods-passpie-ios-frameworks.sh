@@ -137,13 +137,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${PODS_ROOT}/ObjectivePGP/Frameworks/ios/ObjectivePGP.framework"
   install_dsym "${PODS_ROOT}/ObjectivePGP/Frameworks/ios/ObjectivePGP.framework.dSYM"
-  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${PODS_ROOT}/ObjectivePGP/Frameworks/ios/ObjectivePGP.framework"
   install_dsym "${PODS_ROOT}/ObjectivePGP/Frameworks/ios/ObjectivePGP.framework.dSYM"
-  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

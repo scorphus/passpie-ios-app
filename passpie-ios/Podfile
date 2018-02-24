@@ -9,4 +9,5 @@ target 'passpie-ios' do
   # Pods for passpie-ios
   pod 'Alamofire'
   pod 'ObjectivePGP'
+  pod 'Yaml'
 end
