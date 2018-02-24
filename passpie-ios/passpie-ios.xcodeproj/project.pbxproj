@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		29E9B2FC8AAE3D0052E399FA /* Pods_passpie_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF13991D6DB3200590C29CA3 /* Pods_passpie_ios.framework */; };
+		525EAB35204211C00098CB7A /* ObjectivePGP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525EAB34204211BF0098CB7A /* ObjectivePGP.framework */; };
+		525EAB37204211DC0098CB7A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525EAB36204211DC0098CB7A /* Security.framework */; };
+		525EAB39204211F30098CB7A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 525EAB38204211F30098CB7A /* libz.tbd */; };
+		525EAB3B204212070098CB7A /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 525EAB3A204212060098CB7A /* libbz2.tbd */; };
 		E351B4A02041EFEA00C88E5D /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B49F2041EFEA00C88E5D /* RepoItem.swift */; };
 		E351B4A3204200AA00C88E5D /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A2204200AA00C88E5D /* RepoViewController.swift */; };
 		E351B4A52042034D00C88E5D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A42042034D00C88E5D /* ItemCell.swift */; };
@@ -21,8 +25,24 @@
 		E3D563A82041DBA80080EF45 /* RepoDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D563A72041DBA80080EF45 /* RepoDir.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		525EAB3320420EBB0098CB7A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0A38009740D7B7F8760E77CE /* Pods-passpie-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passpie-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios.release.xcconfig"; sourceTree = "<group>"; };
+		525EAB34204211BF0098CB7A /* ObjectivePGP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectivePGP.framework; path = "passpie-ios/ObjectivePGP.framework"; sourceTree = "<group>"; };
+		525EAB36204211DC0098CB7A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		525EAB38204211F30098CB7A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		525EAB3A204212060098CB7A /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		AF13991D6DB3200590C29CA3 /* Pods_passpie_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_passpie_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BA31BE6D05A31DEB54B6FC /* Pods-passpie-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passpie-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		E351B49F2041EFEA00C88E5D /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
@@ -45,6 +65,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525EAB37204211DC0098CB7A /* Security.framework in Frameworks */,
+				525EAB39204211F30098CB7A /* libz.tbd in Frameworks */,
+				525EAB3B204212070098CB7A /* libbz2.tbd in Frameworks */,
+				525EAB35204211C00098CB7A /* ObjectivePGP.framework in Frameworks */,
 				29E9B2FC8AAE3D0052E399FA /* Pods_passpie_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +79,10 @@
 		0E5D4F26A19FE829FB3793DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				525EAB3A204212060098CB7A /* libbz2.tbd */,
+				525EAB38204211F30098CB7A /* libz.tbd */,
+				525EAB36204211DC0098CB7A /* Security.framework */,
+				525EAB34204211BF0098CB7A /* ObjectivePGP.framework */,
 				AF13991D6DB3200590C29CA3 /* Pods_passpie_ios.framework */,
 			);
 			name = Frameworks;
@@ -135,6 +163,8 @@
 				E3D5638B20416A3F0080EF45 /* Resources */,
 				57489659F9747D3ADCA20D84 /* [CP] Embed Pods Frameworks */,
 				279F12E7675C6F793589D1DA /* [CP] Copy Pods Resources */,
+				525EAB3320420EBB0098CB7A /* CopyFiles */,
+				525EAB3C204212380098CB7A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,6 +237,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		525EAB3C204212380098CB7A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectivePGP.framework/strip-frameworks.sh\"";
 		};
 		57489659F9747D3ADCA20D84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -404,8 +447,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V7W9AEUL23;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/passpie-ios",
+				);
 				INFOPLIST_FILE = "passpie-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = johhan.passpie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,8 +468,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V7W9AEUL23;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/passpie-ios",
+				);
 				INFOPLIST_FILE = "passpie-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = johhan.passpie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
