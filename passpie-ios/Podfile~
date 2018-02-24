@@ -8,6 +8,10 @@ target 'passpie-ios' do
 
   # Pods for passpie-ios
   pod 'Alamofire'
+<<<<<<< HEAD
   pod 'Zip', '~> 1.1'
-  pod 'TPCocoaGPG', :git => 'https://github.com/pelletier/TPCocoaGPG.git', :branch => :master
+  pod 'ObjectivePGP'
+=======
+  pod 'TPCocoaGPG'
+>>>>>>> 7b4dfab38d8df1ff3fcf7f5a51ae846af83d1770
 end
