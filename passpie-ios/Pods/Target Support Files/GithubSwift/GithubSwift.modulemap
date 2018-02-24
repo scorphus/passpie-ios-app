@@ -1,6 +1,0 @@
-framework module GithubSwift {
-  umbrella header "GithubSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}
