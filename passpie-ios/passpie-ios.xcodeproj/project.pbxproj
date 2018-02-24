@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		29E9B2FC8AAE3D0052E399FA /* Pods_passpie_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF13991D6DB3200590C29CA3 /* Pods_passpie_ios.framework */; };
+		E351B4A02041EFEA00C88E5D /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B49F2041EFEA00C88E5D /* RepoItem.swift */; };
+		E351B4A3204200AA00C88E5D /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A2204200AA00C88E5D /* RepoViewController.swift */; };
+		E351B4A52042034D00C88E5D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A42042034D00C88E5D /* ItemCell.swift */; };
 		E3D5639120416A3F0080EF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D5639020416A3F0080EF45 /* AppDelegate.swift */; };
 		E3D5639320416A3F0080EF45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D5639220416A3F0080EF45 /* ViewController.swift */; };
 		E3D5639620416A3F0080EF45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D5639420416A3F0080EF45 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		0A38009740D7B7F8760E77CE /* Pods-passpie-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passpie-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios.release.xcconfig"; sourceTree = "<group>"; };
 		AF13991D6DB3200590C29CA3 /* Pods_passpie_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_passpie_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BA31BE6D05A31DEB54B6FC /* Pods-passpie-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passpie-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		E351B49F2041EFEA00C88E5D /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
+		E351B4A2204200AA00C88E5D /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		E351B4A42042034D00C88E5D /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		E3D5638D20416A3F0080EF45 /* passpie-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "passpie-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D5639020416A3F0080EF45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D5639220416A3F0080EF45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E351B4A12042008300C88E5D /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3D5639220416A3F0080EF45 /* ViewController.swift */,
+				E351B4A42042034D00C88E5D /* ItemCell.swift */,
+				E351B4A2204200AA00C88E5D /* RepoViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
 		E3D5638420416A3F0080EF45 = {
 			isa = PBXGroup;
 			children = (
@@ -84,9 +100,9 @@
 		E3D5638F20416A3F0080EF45 /* passpie-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E351B4A12042008300C88E5D /* view controllers */,
 				E3D563A62041DB960080EF45 /* models */,
 				E3D5639020416A3F0080EF45 /* AppDelegate.swift */,
-				E3D5639220416A3F0080EF45 /* ViewController.swift */,
 				E3D5639420416A3F0080EF45 /* Main.storyboard */,
 				E3D5639720416A3F0080EF45 /* Assets.xcassets */,
 				E3D5639920416A400080EF45 /* LaunchScreen.storyboard */,
@@ -101,6 +117,7 @@
 			children = (
 				E3D563A42041D3AD0080EF45 /* RepoFile.swift */,
 				E3D563A72041DBA80080EF45 /* RepoDir.swift */,
+				E351B49F2041EFEA00C88E5D /* RepoItem.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -236,9 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E351B4A52042034D00C88E5D /* ItemCell.swift in Sources */,
 				E3D563A82041DBA80080EF45 /* RepoDir.swift in Sources */,
 				E3D5639320416A3F0080EF45 /* ViewController.swift in Sources */,
+				E351B4A02041EFEA00C88E5D /* RepoItem.swift in Sources */,
 				E3D563A52041D3AD0080EF45 /* RepoFile.swift in Sources */,
+				E351B4A3204200AA00C88E5D /* RepoViewController.swift in Sources */,
 				E3D563A320416AD50080EF45 /* ApiManager.swift in Sources */,
 				E3D5639120416A3F0080EF45 /* AppDelegate.swift in Sources */,
 			);
