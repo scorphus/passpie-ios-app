@@ -11,5 +11,7 @@ import Foundation
 class RepoContent {
     var isFile: Bool
     var name: String
+    var download: URL?
+    
     
 }
