@@ -13,5 +13,5 @@ import Zip
 class ApiManager {
     static var sharedInstance = ApiManager()
     
-
+    func getFolder(completion: @escaping ())
 }
