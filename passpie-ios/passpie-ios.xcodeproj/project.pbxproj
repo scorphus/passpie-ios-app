@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8156CBE3059FA8994D9DC27 /* Pods_passpie_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733B6BFDACB19BA4127C40CE /* Pods_passpie_ios.framework */; };
 		E3D56331204157660080EF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D56330204157660080EF45 /* AppDelegate.swift */; };
 		E3D56333204157660080EF45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D56332204157660080EF45 /* ViewController.swift */; };
 		E3D56336204157660080EF45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D56334204157660080EF45 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		705D0E49B6CEDD8812A4218B /* Pods-passpie-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passpie-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		733B6BFDACB19BA4127C40CE /* Pods_passpie_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_passpie_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0512A79A272FE7EA9FA3698 /* Pods-passpie-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passpie-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E3D5632D204157660080EF45 /* passpie-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "passpie-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D56330204157660080EF45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D56332204157660080EF45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8156CBE3059FA8994D9DC27 /* Pods_passpie_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DB06A394A5D6FBFA2A27DC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				733B6BFDACB19BA4127C40CE /* Pods_passpie_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBD8F5C0AB5C0505CF4B97F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				705D0E49B6CEDD8812A4218B /* Pods-passpie-ios.debug.xcconfig */,
+				B0512A79A272FE7EA9FA3698 /* Pods-passpie-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E3D56324204157660080EF45 = {
 			isa = PBXGroup;
 			children = (
 				E3D5632F204157660080EF45 /* passpie-ios */,
 				E3D5632E204157660080EF45 /* Products */,
+				BBD8F5C0AB5C0505CF4B97F0 /* Pods */,
+				1DB06A394A5D6FBFA2A27DC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D5633F204157660080EF45 /* Build configuration list for PBXNativeTarget "passpie-ios" */;
 			buildPhases = (
+				1FE852F46BD2FF7871D5E011 /* [CP] Check Pods Manifest.lock */,
 				E3D56329204157660080EF45 /* Sources */,
 				E3D5632A204157660080EF45 /* Frameworks */,
 				E3D5632B204157660080EF45 /* Resources */,
+				40E3EE5FB45D43607A0D730F /* [CP] Embed Pods Frameworks */,
+				E813C4C2D13C13AD46F752A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FE852F46BD2FF7871D5E011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-passpie-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40E3EE5FB45D43607A0D730F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Construction/Construction.framework",
+				"${BUILT_PRODUCTS_DIR}/GithubSwift/GithubSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ISO8601/ISO8601.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Tailor/Tailor.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Construction.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GithubSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISO8601.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tailor.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E813C4C2D13C13AD46F752A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-passpie-ios/Pods-passpie-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3D56329204157660080EF45 /* Sources */ = {
@@ -272,6 +363,7 @@
 		};
 		E3D56340204157660080EF45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705D0E49B6CEDD8812A4218B /* Pods-passpie-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +379,7 @@
 		};
 		E3D56341204157660080EF45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0512A79A272FE7EA9FA3698 /* Pods-passpie-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

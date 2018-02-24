@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (3.5.1)
+  - Construction (1.0.0)
+  - GithubSwift (0.5.0):
+    - Alamofire (~> 3.3)
+    - Construction
+    - ISO8601 (~> 0.5)
+    - RxSwift (~> 2.4)
+    - Tailor
+  - ISO8601 (0.6.0)
+  - RxSwift (2.6.1)
+  - Tailor (3.0.0)
+
+DEPENDENCIES:
+  - GithubSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  Construction: a252ff816a7b03c3e2e54594172f2d61c881cded
+  GithubSwift: 23b22ebdcb5562da6a742d046f7dd4389533978f
+  ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
+  RxSwift: 0147fbf94e65c6085da9540de92848189ac1c3f6
+  Tailor: 4fb574e8815d076abbf2bd7ffdbf4b14103fe17c
+
+PODFILE CHECKSUM: 2512bfba6b1fbc2506322e174573be68ff88c117
+
+COCOAPODS: 1.3.1
