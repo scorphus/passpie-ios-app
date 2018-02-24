@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var accessTokenField: UITextField!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var repoField: UITextField!
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func getRepo(_ sender: Any) {
-        ApiManager.sharedInstance.downloadRepo(userName: userField.text!, repoName: repoField.text!)
+        ApiManager.sharedInstance.loadRepos(userName: userField.text!, repoName: repoField.text!, accessToken: accessTokenField.text!)
     }
     
 

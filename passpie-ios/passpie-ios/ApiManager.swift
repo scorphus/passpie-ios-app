@@ -8,10 +8,17 @@
 
 import Foundation
 import Alamofire
-import Zip
 
 class ApiManager {
     static var sharedInstance = ApiManager()
-    
-    func getFolder(completion: @escaping ())
+    func loadRepos(userName: String, repoName: String, accessToken: String) {
+        let urlString = "https://api.github.com/repos/\(userName)/\(repoName)/contents?access_token=\(accessToken)"
+        request(urlString, method: .get, parameters: nil, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
+            if response.result.isSuccess {
+                print(response.result.value!)
+            } else {
+                print("issue get repo")
+            }
+        }
+    }
 }
