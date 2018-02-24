@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let userName = UserDefaults.standard.string(forKey: "userName")
+        if userName != nil {
+            User.loadUser()
+            let loggedInStage = storyboard.instantiateViewController(withIdentifier: "loggedinStage")
+            window?.rootViewController = loggedInStage
+        }
+//        if launchedBefore  {
+//            print("Not first launch.")
+//            User.loadUser()
+//            window?.rootViewController = loggedInStage
+//
+//        } else {
+//            print("First launch, setting UserDefault.")
+//            UserDefaults.standard.set(true, forKey: "launchedBefore")
+//            let loggedInStage = storyboard.instantiateViewController(withIdentifier: "loggedinStage")
+//        }
         return true
     }
 

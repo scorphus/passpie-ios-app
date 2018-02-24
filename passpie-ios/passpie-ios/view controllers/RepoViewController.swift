@@ -8,18 +8,32 @@
 
 import UIKit
 
-class RepoViewController: UIViewController, UITableViewDataSource {
+class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var paths: [String]? = [""]
+    var currentPath: String = ""
     var items: [RepoItem]?
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
+        ApiManager.sharedInstance.loadRepos(path: "") { (items, error) in
+            if let items = items {
+                self.items = items
+                self.tableView.reloadData()
+            } else if let error = error {
+                print(error)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items!.count
+        if let items = items {
+            return items.count
+        }
+        return 0
     }
     
 
@@ -28,5 +42,49 @@ class RepoViewController: UIViewController, UITableViewDataSource {
         cell.itemNameLabel.text = items![indexPath.row].fileName
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items![indexPath.row]
+        if(item.type == "dir") {
+            currentPath = item.path
+            paths?.append(currentPath)
+            ApiManager.sharedInstance.loadRepos(path: "/\(currentPath)") { (items, error) in
+                if let items = items {
+                    self.items = items
+                    self.tableView.reloadData()
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        }
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        var index = paths!.index(of: currentPath) ?? 0
+        print("index is \(index)")
+        if index > 0 {
+            index -= 1;
+            let oldPath = paths![index]
+            paths!.remove(at: index + 1)
+            print("old path: \(oldPath)")
+            ApiManager.sharedInstance.loadRepos(path: "/\(oldPath)") { (items, error) in
+                if let items = items {
+                    self.items = items
+                    self.tableView.reloadData()
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        } else {
+            paths = [""]
+            ApiManager.sharedInstance.loadRepos(path: "") { (items, error) in
+                if let items = items {
+                    self.items = items
+                    self.tableView.reloadData()
+                } else if let error = error {
+                    print(error)
+                }
+            }
+        }
+    }
+    
 }

@@ -24,18 +24,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func getRepo(_ sender: Any) {
-        ApiManager.sharedInstance.loadRepos(userName: userField.text!, repoName: repoField.text!, accessToken: accessTokenField.text!) { (items, error) in
-            if let items = items {
-                self.items = items
-                self.performSegue(withIdentifier: "showRepo", sender: nil)
-            } else if let error = error {
-                print(error)
-            }
-        }
+        User.userName = userField.text!
+        User.repoName = repoField.text!
+        User.accessToken = accessTokenField.text!
+        User.saveUser()
+        performSegue(withIdentifier: "showRepo", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let repoViewController = segue.destination as! RepoViewController
-        repoViewController.items = self.items
+//        if segue.identifier == "showRepo" {
+//            let navigationController = segue.destination as! UINavigationController
+//            let repoViewController = navigationController.childViewControllers[0] as! RepoViewController
+//            repoViewController.items = self.items
+//        }
     }
 
 }

@@ -12,8 +12,8 @@ import Alamofire
 class ApiManager {
     static var sharedInstance = ApiManager()
     
-    func loadRepos(userName: String, repoName: String, accessToken: String, completion: @escaping ([RepoItem]?, Error?) -> ()) {
-        let urlString = "https://api.github.com/repos/\(userName)/\(repoName)/contents?access_token=\(accessToken)"
+    func loadRepos(path: String, completion: @escaping ([RepoItem]?, Error?) -> ()) {
+        let urlString = "https://api.github.com/repos/\(User.userName)/\(User.repoName)/contents\(path)?access_token=\(User.accessToken)"
         request(urlString, method: .get, parameters: nil, encoding: URLEncoding.queryString).validate().responseJSON { (response) in
             if response.result.isSuccess {
                 let itemsDictionary = response.result.value as! [[String : Any]]

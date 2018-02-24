@@ -12,11 +12,13 @@ class RepoItem {
     var fileName: String
     var type: String
     var downloadURL: URL?
+    var path: String
     
     init(repoDicitonary: [String: Any]) {
         fileName = repoDicitonary["name"] as! String
         type = repoDicitonary["type"] as! String
         let downloadURLString = repoDicitonary["download_url"] as? String ?? ""
         downloadURL = URL(string: downloadURLString)
+        path = repoDicitonary["path"] as? String ?? ""
     }
 }
