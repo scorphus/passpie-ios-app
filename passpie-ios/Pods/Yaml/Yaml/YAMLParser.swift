@@ -125,7 +125,7 @@ private func expectVersion (_ context: Context) -> Result<Context> {
 
 
 private func recreateText (_ string: String, context: Context) -> String {
-  if string.characters.count >= 50 || peekType(context) == .end {
+  if string.count >= 50 || peekType(context) == .end {
     return string
   }
   return recreateText(string + peekMatch(context), context: advance(context))
@@ -592,7 +592,8 @@ private func normalizeBreaks (_ s: String) -> String {
 }
 
 private func unwrapQuotedString (_ s: String) -> String {
-  return s[s.index(after: s.startIndex)..<s.index(before: s.endIndex)]
+    let retString = s[s.index(s.startIndex, offsetBy: 1)...s.index(s.endIndex, offsetBy: -1)]
+    return String(retString)
 }
 
 private func unescapeSingleQuotes (_ s: String) -> String {
