@@ -23,16 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loggedInStage = storyboard.instantiateViewController(withIdentifier: "loggedinStage")
             window?.rootViewController = loggedInStage
         }
-//        if launchedBefore  {
-//            print("Not first launch.")
-//            User.loadUser()
-//            window?.rootViewController = loggedInStage
-//
-//        } else {
-//            print("First launch, setting UserDefault.")
-//            UserDefaults.standard.set(true, forKey: "launchedBefore")
-//            let loggedInStage = storyboard.instantiateViewController(withIdentifier: "loggedinStage")
-//        }
+        NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Logout notification received")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.window?.rootViewController = loginVC
+            User.clearUser()
+        }
         return true
     }
 

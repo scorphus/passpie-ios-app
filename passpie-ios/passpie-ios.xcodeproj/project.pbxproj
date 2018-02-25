@@ -16,7 +16,8 @@
 		E351B4A3204200AA00C88E5D /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A2204200AA00C88E5D /* RepoViewController.swift */; };
 		E351B4A52042034D00C88E5D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A42042034D00C88E5D /* ItemCell.swift */; };
 		E351B4A7204208C300C88E5D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A6204208C300C88E5D /* User.swift */; };
-		E351B4A920421C6E00C88E5D /* FileViewControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A820421C6E00C88E5D /* FileViewControlelr.swift */; };
+		E351B4A920421C6E00C88E5D /* FileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4A820421C6E00C88E5D /* FileViewController.swift */; };
+		E351B4AB2042457D00C88E5D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351B4AA2042457D00C88E5D /* StringExtension.swift */; };
 		E3D5639120416A3F0080EF45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D5639020416A3F0080EF45 /* AppDelegate.swift */; };
 		E3D5639320416A3F0080EF45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D5639220416A3F0080EF45 /* ViewController.swift */; };
 		E3D5639620416A3F0080EF45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D5639420416A3F0080EF45 /* Main.storyboard */; };
@@ -24,7 +25,6 @@
 		E3D5639B20416A400080EF45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D5639920416A400080EF45 /* LaunchScreen.storyboard */; };
 		E3D563A320416AD50080EF45 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D563A220416AD50080EF45 /* ApiManager.swift */; };
 		E3D563A52041D3AD0080EF45 /* RepoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D563A42041D3AD0080EF45 /* RepoFile.swift */; };
-		E3D563A82041DBA80080EF45 /* RepoDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D563A72041DBA80080EF45 /* RepoDir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +51,8 @@
 		E351B4A2204200AA00C88E5D /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		E351B4A42042034D00C88E5D /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		E351B4A6204208C300C88E5D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E351B4A820421C6E00C88E5D /* FileViewControlelr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewControlelr.swift; sourceTree = "<group>"; };
+		E351B4A820421C6E00C88E5D /* FileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViewController.swift; sourceTree = "<group>"; };
+		E351B4AA2042457D00C88E5D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E3D5638D20416A3F0080EF45 /* passpie-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "passpie-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D5639020416A3F0080EF45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D5639220416A3F0080EF45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		E3D5639C20416A400080EF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D563A220416AD50080EF45 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		E3D563A42041D3AD0080EF45 /* RepoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFile.swift; sourceTree = "<group>"; };
-		E3D563A72041DBA80080EF45 /* RepoDir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDir.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				E3D5639220416A3F0080EF45 /* ViewController.swift */,
 				E351B4A42042034D00C88E5D /* ItemCell.swift */,
 				E351B4A2204200AA00C88E5D /* RepoViewController.swift */,
-				E351B4A820421C6E00C88E5D /* FileViewControlelr.swift */,
+				E351B4A820421C6E00C88E5D /* FileViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -133,14 +133,15 @@
 		E3D5638F20416A3F0080EF45 /* passpie-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E3D5639020416A3F0080EF45 /* AppDelegate.swift */,
 				E3D563A220416AD50080EF45 /* ApiManager.swift */,
 				E351B4A12042008300C88E5D /* view controllers */,
 				E3D563A62041DB960080EF45 /* models */,
-				E3D5639020416A3F0080EF45 /* AppDelegate.swift */,
 				E3D5639420416A3F0080EF45 /* Main.storyboard */,
 				E3D5639720416A3F0080EF45 /* Assets.xcassets */,
 				E3D5639920416A400080EF45 /* LaunchScreen.storyboard */,
 				E3D5639C20416A400080EF45 /* Info.plist */,
+				E351B4AA2042457D00C88E5D /* StringExtension.swift */,
 			);
 			path = "passpie-ios";
 			sourceTree = "<group>";
@@ -149,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				E3D563A42041D3AD0080EF45 /* RepoFile.swift */,
-				E3D563A72041DBA80080EF45 /* RepoDir.swift */,
 				E351B49F2041EFEA00C88E5D /* RepoItem.swift */,
 				E351B4A6204208C300C88E5D /* User.swift */,
 			);
@@ -307,12 +307,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E351B4A52042034D00C88E5D /* ItemCell.swift in Sources */,
-				E3D563A82041DBA80080EF45 /* RepoDir.swift in Sources */,
 				E3D5639320416A3F0080EF45 /* ViewController.swift in Sources */,
+				E351B4AB2042457D00C88E5D /* StringExtension.swift in Sources */,
 				E351B4A02041EFEA00C88E5D /* RepoItem.swift in Sources */,
 				E3D563A52041D3AD0080EF45 /* RepoFile.swift in Sources */,
 				E351B4A7204208C300C88E5D /* User.swift in Sources */,
-				E351B4A920421C6E00C88E5D /* FileViewControlelr.swift in Sources */,
+				E351B4A920421C6E00C88E5D /* FileViewController.swift in Sources */,
 				E351B4A3204200AA00C88E5D /* RepoViewController.swift in Sources */,
 				E3D563A320416AD50080EF45 /* ApiManager.swift in Sources */,
 				E3D5639120416A3F0080EF45 /* AppDelegate.swift in Sources */,
