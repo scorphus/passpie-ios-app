@@ -24,4 +24,9 @@ struct User {
         User.repoName = userDefaults.string(forKey: "repoName")!
         User.accessToken = userDefaults.string(forKey: "accessToken")!
     }
+    static func clearUser() {
+        userDefaults.removeObject(forKey: "userName")
+        userDefaults.removeObject(forKey: "repoName")
+        userDefaults.removeObject(forKey: "accessToken")
+    }
 }

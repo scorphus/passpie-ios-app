@@ -13,6 +13,7 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var paths: [String]? = [""]
     var currentPath: String = ""
     var items: [RepoItem]?
+    var selectedItem: RepoItem?
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -27,6 +28,9 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(error)
             }
         }
+    }
+    @IBAction func logOutButtonPressed(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +60,9 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     print(error)
                 }
             }
+        } else {
+            selectedItem = item
+            performSegue(withIdentifier: "showFileSegue", sender: nil)
         }
     }
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -86,5 +93,8 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let fileViewController = segue.destination as! FileViewController
+        fileViewController.file = selectedItem
+    }
 }

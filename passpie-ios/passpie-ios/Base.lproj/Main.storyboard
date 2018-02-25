@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="passpie_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="passpie_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
                         <viewLayoutGuide key="safeArea" id="4yi-rb-qNr"/>
                     </view>
                     <navigationItem key="navigationItem" id="AJC-3A-P1Q">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="QBD-g4-vQ2">
+                        <barButtonItem key="leftBarButtonItem" id="QBD-g4-vQ2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PNe-5t-h56">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,20 +122,30 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="2mX-8V-jth">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Yq4-r7-sLE">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="M1B-5e-Ou5" eventType="touchUpInside" id="z0t-8p-rms"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ibl-fl-Ic2" id="Oab-Hj-frK"/>
-                        <segue destination="g0q-7b-yxw" kind="show" id="IfO-GV-60K"/>
+                        <segue destination="g0q-7b-yxw" kind="show" identifier="showFileSegue" id="IfO-GV-60K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnc-ew-Qu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1652" y="33"/>
         </scene>
-        <!--File View Controlelr-->
+        <!--File View Controller-->
         <scene sceneID="iwc-qp-4B6">
             <objects>
-                <viewController id="g0q-7b-yxw" customClass="FileViewControlelr" customModule="passpie_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g0q-7b-yxw" customClass="FileViewController" customModule="passpie_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z3e-WF-gxE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
