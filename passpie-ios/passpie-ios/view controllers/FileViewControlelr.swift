@@ -10,7 +10,7 @@ import UIKit
 
 class FileViewControlelr: UIViewController {
 
-    
+    var file: RepoItem?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
